@@ -3,14 +3,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-    Hey THIS SHIT WORKING GOOD B
+    
     <section>
             <div class="revolution-container">
                 <div class="revolution">
                     <ul class="list-unstyled">	<!-- SLIDE  -->
                         <li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
                             <!-- MAIN IMAGE -->
-                            <img src="http://placehold.it/1920x1200"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                            <img src="https://i.kinja-img.com/gawker-media/image/upload/s--QmqXkVxi--/c_scale,f_auto,fl_progressive,q_80,w_800/lgaix6s8kkfhwocvxvcc.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
                             <!-- LAYERS -->
                             <div class="tp-caption skewfromrightshort customout"
                                  data-x="20"
