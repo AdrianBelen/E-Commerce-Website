@@ -1,4 +1,4 @@
-<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Main.Master.vb" Inherits="ECommerceCISProject.Site1" %>
+    <%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Main.Master.vb" Inherits="ECommerceCISProject.Site1" %>
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -191,28 +191,23 @@
                             <div class="container">
                                 <div class="navbar-header">
                                     <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                                    <a href="index.html" class="navbar-brand"><i class="fa fa-home"></i></a>
+                                    <a href="index.html" class="navbar-brand"><i class="fa fa-home"></i></a>    
                                 </div>
                                 <div id="navbar-collapse-1" class="navbar-collapse collapse ">
                                     <ul class="nav navbar-nav">
                                         <!-- Classic list -->
-                                        <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Home <i class="fa fa-caret-right fa-rotate-45"></i></a>
+                                        <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Consoles <i class="fa fa-caret-right fa-rotate-45"></i></a>
                                             <ul class="dropdown-menu list-unstyled fadeInUp animated">
-                                                <li>
-                                                    <a  href="index.html"> Home </a>
-                                                </li>
-                                                <li>
-                                                    <a  href="index2.html"> Home Header Light</a>
-                                                </li>
-                                                <li>
-                                                    <a  href="index3.html"> Home Vertical Menu</a>
-                                                </li>
-                                                <li>
-                                                    <a  href="index-dark.html"> Home Dark Version</a>
-                                                </li>
-                                                <li>
-                                                    <a  href="index-with-side.html"> Home With Side <span>Added</span></a>
-                                                </li>
+                                                <asp:SqlDataSource ID="SqlDSMainCategory" runat="server"
+                                                     ConnectionString="<%$ ConnectionStrings:ConnectionStringECommerceProject %>" 
+		                                                SelectCommand="SELECT * FROM [Category] Where Parent = 0">
+                                                </asp:SqlDataSource>
+                                                <asp:Repeater ID="dpMainCategory" runat="server" DataSourceID="SqlDSMainCategory">
+		                                    <ItemTemplate>
+			                                    <li><a href="Category.aspx?MainCategoryID=<%# CStr(Eval("ID")) %>&MainCategoryName=<%# Trim(Eval("CategoryName")) %>"><%# Eval("CategoryName") %></a></li>                    
+		                                    </ItemTemplate>
+	                                    </asp:Repeater> 
+                                                <asp:Label ID="lblMainCategory" runat="server" Text="Label"></asp:Label>
                                             </ul>
                                         </li>
                                         <li class="dropdown  yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Pages <i class="fa fa-caret-right fa-rotate-45"></i> <span>new</span></a>
